@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    environment:
+      TZ: Asia/Tokyo
+    build: .
+    volumes:
+      - .:/code
+    tty: true
+    env_file:
+      - ./.env
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+
+  postgres:
+    restart: always
+    image: postgres:12.2
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: $DB_USER_NAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: $DB_NAME
