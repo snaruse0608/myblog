@@ -1,6 +1,7 @@
 import uuid
 from accounts.models import CustomUser
 from django.db import models
+import markdown
 
 class Article(models.Model):
     class Meta:
@@ -15,3 +16,10 @@ class Article(models.Model):
     
     def __str__(self):
         return self.title
+
+    def markdown_to_html(self):
+        md = markdown.Markdown(
+            extensions = ['extra', 'admonition', 'sane_lists', 'toc']
+        )
+        html = md.convert(self.content)
+        return html
