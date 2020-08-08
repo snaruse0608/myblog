@@ -1,9 +1,0 @@
-<h1>ブログ</h1>
-
-{% for article in article_list %}
-    {{ article.title }}
-    {{ article.content | truncatechars:20 }}
-    {{ article.created_at }}
-{% empty %}
-    <p>ブログがありません…</p>
-{% endfor %}
