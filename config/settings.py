@@ -49,6 +49,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'account'),
+            os.path.join(BASE_DIR, 'templates', 'myblog'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -102,9 +103,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-# SITE_ID = 1
+SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',  # 一般ユーザー用(メールアドレス認証)
@@ -125,3 +130,4 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 # ログアウトリンクのクリック一発でログアウトする設定
 ACCOUNT_LOGOUT_ON_GET = True
+
