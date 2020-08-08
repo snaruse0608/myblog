@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}WHITE LEAF | {{ object.title }}{% endblock %}
+
+{% block contents %}
+<h1>詳細画面</h1>
+
+
+{{ object.title }}
+
+{{ object.content | linebreaksbr}}
+
+{{ object.created_at }}
+
+{% endblock %}

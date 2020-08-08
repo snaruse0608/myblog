@@ -6,7 +6,7 @@
     <h1>ブログ</h1>
 
     {% for article in article_list %}
-        {{ article.title }}
+        <a href="{% url 'myblog:Detail' article.id %}">{{ article.title }}</a>
         {{ article.content | truncatechars:20 }}
         {{ article.created_at }}
     {% empty %}
