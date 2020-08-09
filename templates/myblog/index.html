@@ -2,14 +2,25 @@
 
 {% block title %}WHITE LEAF | Home{% endblock %}
 
+<!-- body --> 
 {% block contents %}
-    <h1>ブログ</h1>
+    <h4 class="ml-2 mt-2">記事一覧</h4>
+        {% for article in article_list %}
 
-    {% for article in article_list %}
-        <a href="{% url 'myblog:Detail' article.id %}">{{ article.title }}</a>
-        {{ article.content | truncatechars:20 }}
-        {{ article.created_at }}
-    {% empty %}
-        <p>ブログがありません…</p>
-    {% endfor %}
+            <div class="card m-2">
+                <div class="card-body" >
+                    <h5 class="card-title"><a href="{% url 'myblog:Detail' article.id %}">{{ article.title }}</a></h5>
+                    <p class="card-text text-right">{{ article.created_at }}</p>
+                </div>
+            </div>
+
+        {% empty %}
+            <p>ブログがありません…</p>
+        {% endfor %}
+
+{% endblock %}
+
+<!-- サイドバー --> 
+{% block sidebar %}
+    サイドバーです
 {% endblock %}
