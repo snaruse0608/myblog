@@ -8,15 +8,19 @@
 
 {% block contents %}
 
-    <h1>詳細画面</h1>
+    <article class="article">
+        <h1>{{ object.title }}</h1>
+    
+        {{ object.formatted_markdown|safe }}
+    
+        {{ object.created_at }}
+    </article>
 
-
-    {{ object.title }}
-
-    {{ object.formatted_markdown|safe }}
-
-    {{ object.created_at }}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
+{% block sidebar %}
+    サイドバーだよ！
 {% endblock %}

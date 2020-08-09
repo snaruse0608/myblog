@@ -9,11 +9,22 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         {% block head %}{% endblock %}
     <body>
-        <div>
-            <nav class="navbar white-leaf-nav justify-content-center p-5">
-                <div class="navbar-brand"><h2>WHITE LEAF</h2></div>
-            </nav>
+        <nav class="navbar white-leaf-nav justify-content-center p-5">
+            <div class="navbar-brand"><h2>WHITE LEAF</h2></div>
+        </nav>
+        <div class="container">
+            <div class="row fix-gutters">
+                <div class="col-sm-8 col-lg-8">
+                    <div class="white-leaf-content border border-info rounded">
+                        {% block contents %}{% endblock %}
+                    </div>
+                </div>
+                <div class="col-sm-4 col-4">
+                    <div class="white-leaf-sidebar border border-info rounded">
+                        {% block sidebar %}{% endblock %}
+                    </div>
+                </div>
+              </div>
         </div>
-        {% block contents %}{% endblock %}
     </body>
 </html>
