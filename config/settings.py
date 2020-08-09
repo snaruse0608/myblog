@@ -26,9 +26,13 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    # third-party
+    'markdownx',
+
     # Applications
     'accounts.apps.AccountsConfig',
     'myblog.apps.MyblogConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -131,3 +135,11 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 # ログアウトリンクのクリック一発でログアウトする設定
 ACCOUNT_LOGOUT_ON_GET = True
 
+# 画像のURLとリンク先の設定
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.toc',
+]

@@ -2,4 +2,4 @@
 postgresql
 *.pyc
 __pycache__/
-
+media/
