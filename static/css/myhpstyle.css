@@ -47,3 +47,15 @@ img {
 .article {
     padding: 15px 15px;
 }
+
+.toc {
+    border: double;
+    border-radius: 4px;
+    border-color: #95a56b;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 0px;
+}
