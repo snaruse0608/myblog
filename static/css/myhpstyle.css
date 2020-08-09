@@ -1,6 +1,49 @@
+body {
+    background: linear-gradient(-45deg, #629be6, #080a81) !important;
+    color: #6C675B !important;
+    font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO" !important;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* colでpaddingが15pxにセットされているので初期化する */
+.fix-gutters > [class^="col-"],
+.fix-gutters > [class*=" col-"] {
+     padding-right: 0px;
+     padding-left: 0px;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
 .white-leaf-nav {
-    background-color: rgba(119, 155, 233, 0.767);
+    background: linear-gradient(-45deg, #23a6d5, #23d5ab);
     text-shadow: 1px 2px 3px rgb(31, 97, 141);
     color: ivory;
     letter-spacing: 5px;
+    font-family: cursive;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.white-leaf-content {
+    margin: 15px;
+    height: 100%-15px;
+    background-color: lightcyan;
+}
+
+.white-leaf-sidebar {
+    margin: 15px;
+    height: 400px;
+    background-color: lightcyan;
+    padding: 15px 15px;
+}
+
+.article {
+    padding: 15px 15px;
 }
