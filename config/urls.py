@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import settings
+from . import settings_common
 from django.contrib.staticfiles.urls import static
 
 urlpatterns = [
@@ -10,4 +10,4 @@ urlpatterns = [
     path('markdownx/', include('markdownx.urls')),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings_common.MEDIA_URL, document_root=settings_common.MEDIA_ROOT)
