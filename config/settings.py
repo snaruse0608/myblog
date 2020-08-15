@@ -4,10 +4,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
-STATIC_ROOT = '/usr/share/nginx/html/static'
-MEDIA_ROOT = '/usr/share/nginx/html/media'
-
-
 # ロギング設定
 LOGGING = {
     'version': 1,
