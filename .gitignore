@@ -4,3 +4,4 @@ postgresql
 __pycache__/
 media/
 .idea/
+logs/

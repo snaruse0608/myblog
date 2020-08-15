@@ -2,7 +2,7 @@ from .settings_common import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
 
 # ロギング設定
 LOGGING = {
