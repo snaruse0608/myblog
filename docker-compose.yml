@@ -15,14 +15,13 @@ services:
       - 8000:8000
     depends_on:
       - postgres
-    command: gunicorn app.wsgi -b 0.0.0.0:8000
+    command: gunicorn config.wsgi -b 0.0.0.0:8000
 
   nginx:
+    restart: always
     image: nginx
     ports:
       - 80:80
-    expose:
-      - 80
     volumes:
       - ./nginx/:/etc/nginx/
       - ./static/:/etc/nginx/static/
