@@ -21,13 +21,22 @@ services:
     image: nginx
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./nginx/:/etc/nginx/
       - ./static:/usr/src/app/static
       - ./templates:/usr/src/app/templates
       - ./media:/usr/src/app/media
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
     depends_on:
       - web
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
 
   postgres:
     restart: always
