@@ -7,7 +7,6 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
-      - ./static/:/usr/src/app/static
     tty: true
     env_file:
       - ./.env
@@ -24,7 +23,9 @@ services:
       - 80:80
     volumes:
       - ./nginx/:/etc/nginx/
-      - ./static/:/etc/nginx/static/
+      - ./static:/usr/src/app/static
+      - ./templates:/usr/src/app/templates
+      - ./media:/usr/src/app/media
     depends_on:
       - web
 
