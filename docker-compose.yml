@@ -6,7 +6,8 @@ services:
       TZ: Asia/Tokyo
     build: .
     volumes:
-      - .:/code
+      - .:/usr/src/app
+      - ./static/:/usr/src/app/static
     tty: true
     env_file:
       - ./.env
@@ -14,6 +15,19 @@ services:
       - 8000:8000
     depends_on:
       - postgres
+    command: gunicorn app.wsgi -b 0.0.0.0:8000
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    expose:
+      - 80
+    volumes:
+      - ./nginx/:/etc/nginx/
+      - ./static/:/etc/nginx/static/
+    depends_on:
+      - web
 
   postgres:
     restart: always
@@ -28,3 +42,4 @@ services:
       POSTGRES_USER: $DB_USER_NAME
       POSTGRES_PASSWORD: $DB_PASSWORD
       POSTGRES_DB: $DB_NAME
+

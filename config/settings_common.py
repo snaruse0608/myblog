@@ -139,3 +139,5 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.extra',
     'markdown.extensions.toc',
 ]
+
+WSGI_APPLICATION = 'config.wsgi.application'
