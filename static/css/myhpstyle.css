@@ -48,6 +48,14 @@ img {
     padding: 15px 15px;
 }
 
+.article-updated {
+    text-align: right;
+}
+
+.article-index-link {
+    text-align: center;
+}
+
 .toc {
     border: double;
     border-radius: 4px;
