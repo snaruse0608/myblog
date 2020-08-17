@@ -7,3 +7,4 @@ media/
 logs/
 init-letsencrypt.sh
 data/
+static/admin/
