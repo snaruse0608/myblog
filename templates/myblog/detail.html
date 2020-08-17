@@ -12,8 +12,12 @@
         <h1>{{ object.title }}</h1>
     
         {{ object.formatted_markdown|safe }}
-    
-        {{ object.created_at }}
+        <div class="article-updated">
+            {{ object.updated_ad }}
+        </div>
+        <div class="article-index-link">
+            <a href="{% url 'myblog:Index' %}">トップページに戻る</a>
+        </div>
     </article>
 
 
