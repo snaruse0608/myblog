@@ -6,3 +6,4 @@ media/
 .idea/
 logs/
 init-letsencrypt.sh
+data/
