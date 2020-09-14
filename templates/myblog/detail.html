@@ -10,7 +10,10 @@
 
     <article class="article">
         <h1>{{ object.title }}</h1>
-    
+        <div class="float-right">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Twetterで共有</a>
+        </div>
+        <div class="mb-5"></div>
         {{ object.formatted_markdown|safe }}
         <div class="article-updated">
             {{ object.updated_ad }}
@@ -23,6 +26,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endblock %}
 
 {% block sidebar %}
