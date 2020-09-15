@@ -10,10 +10,11 @@
 
     <article class="article">
         <h1>{{ object.title }}</h1>
-        <div class="float-right">
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Twetterで共有</a>
+        <div class="clearfix mb-2">
+            <div class="float-right">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Twetterで共有</a>
+            </div>
         </div>
-        <div class="mb-5"></div>
         {{ object.formatted_markdown|safe }}
         <div class="article-updated">
             {{ object.updated_ad }}
