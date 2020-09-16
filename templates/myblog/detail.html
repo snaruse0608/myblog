@@ -12,6 +12,13 @@
         <h1>{{ object.title }}</h1>
         <div class="clearfix mb-2">
             <div class="float-right">
+                {% for tag in object.tags.all %}
+                    <a class="tag" href="#">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="clearfix mb-2">
+            <div class="float-right">
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Twetterで共有</a>
             </div>
         </div>
