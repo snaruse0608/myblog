@@ -9,6 +9,13 @@
 
             <div class="card m-2">
                 <div class="card-body" >
+                    <div class="clearfix">
+                        <div class="float-right">
+                            {% for tag in article.tags.all %}
+                                <a class="tag" style="font-size: xx-small;" href="#">{{ tag.name }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
                     <h5 class="card-title"><a href="{% url 'myblog:Detail' article.id %}">{{ article.title }}</a></h5>
                     <p class="card-text text-right">{{ article.created_at }}</p>
                 </div>
