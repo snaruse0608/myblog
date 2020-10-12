@@ -23,6 +23,9 @@
             </div>
         </div>
         {{ object.formatted_markdown|safe }}
+        <div class="clearfix mb-2">
+            閲覧数:{{ object.views }}
+        </div>
         <div class="article-updated">
             {{ object.updated_ad }}
         </div>

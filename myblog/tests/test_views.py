@@ -28,8 +28,16 @@ class TestArticle(CreateUserTestCase):
             user = self.test_user,
             content = 'test_content'
         )
+        # 閲覧数が0件を確認
+        self.assertEqual(self.article.views, 0)
+
         response = self.client.get(reverse('myblog:Detail', args=(self.article.id,)))
         self.assertContains(response, self.article.content)
+        
+        # 閲覧数が1件を確認
+        article_view_check = Article.objects.get(id=self.article.id)
+        self.assertEqual(article_view_check.views, 1)
+
 
 class TestArticleError(CreateUserTestCase):
     def test_article_index_error(self):
