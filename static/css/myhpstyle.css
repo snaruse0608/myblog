@@ -39,7 +39,7 @@ img {
 
 .white-leaf-sidebar {
     margin: 15px;
-    height: 400px;
+    height: auto;
     background-color: lightcyan;
     padding: 15px 15px;
 }
@@ -96,4 +96,9 @@ img {
 	left: 0;
 	content: '●';
 	color: #fff;
+}
+
+.user-icon {
+    width: 150px;
+    margin: auto;
 }
