@@ -43,7 +43,7 @@ a {
 
 .white-leaf-sidebar {
     margin: 15px;
-    height: 400px;
+    height: auto;
     background-color: white;
     padding: 15px 15px;
 }
@@ -99,4 +99,9 @@ a {
 	top: center;
 	left: 0;
 	color: #fff;
+}
+
+.user-icon {
+    width: 150px;
+    margin: auto;
 }
