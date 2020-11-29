@@ -1,8 +1,7 @@
 body {
-    background: #f2f2f2 !important;
+    background: linear-gradient(-45deg, #629be6, #080a81) !important;
     color: #6C675B !important;
     font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO" !important;
-    word-break: break-all; /* 文字の折り返し */
 }
 
 img {
@@ -23,28 +22,25 @@ img {
     margin-left: 0px !important;
 }
 
-/* aタグの強制文字色変更を阻止 */
-a {
-    color: #6C675B !important;
-}
-
 .white-leaf-nav {
-    background: white !important;
-    text-shadow: 1px 1px 1px gray;
-    color: black;
-    box-shadow: 0 1px 1px 0 whitesmoke;
+    background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+    text-shadow: 1px 2px 3px rgb(31, 97, 141);
+    color: ivory;
+    letter-spacing: 5px;
+    font-family: cursive;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
 
 .white-leaf-content {
     margin: 15px;
     height: 100%-15px;
-    background-color: white;
+    background-color: lightcyan;
 }
 
 .white-leaf-sidebar {
     margin: 15px;
     height: 400px;
-    background-color: white;
+    background-color: lightcyan;
     padding: 15px 15px;
 }
 
@@ -76,13 +72,13 @@ a {
 .tag {
     position: relative;
 	display: inline-block;
-	margin: 0 0 0 .8em;
-	padding: .6em .6em .6em 0;
+	margin: 0 .6em .6em .2em;
+	padding: .6em .6em .6em 1.2em;
 	line-height: 1;
-	color: #fff !important;
+	color: #fff;
 	text-decoration: none;
-    background-color: #333333;
-    font-size: xx-small;
+    background-color: #0000ee;
+    font-size: x-small;
 }
 
 .tag:before {
@@ -92,11 +88,12 @@ a {
 	content: '';
 	border-width: 1.1em 1em 1.1em 0;
 	border-style: solid;
-	border-color: transparent #333333 transparent transparent;
+	border-color: transparent #0000ee transparent transparent;
 }
 .tag:after {
 	position: absolute;
 	top: center;
 	left: 0;
+	content: '●';
 	color: #fff;
 }

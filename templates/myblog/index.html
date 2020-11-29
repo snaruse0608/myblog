@@ -12,26 +12,13 @@
                     <div class="clearfix">
                         <div class="float-right">
                             {% for tag in article.tags.all %}
-                                <a class="tag" href="#">
-                                    <i class="fas fa-tag"></i>
-                                    {{ tag.name }}
-                                </a>
+                                <a class="tag" style="font-size: xx-small;" href="#">{{ tag.name }}</a>
                             {% endfor %}
                         </div>
                     </div>
-                    <a href="{% url 'myblog:Detail' article.id %}">
-                        <h5 class="card-title">
-                            <i class="far fa-newspaper"></i>
-                            {{ article.title }}
-                        </h5>
-                    </a>
-                    <p class="card-text text-right">
-                        <i class="far fa-clock"></i>
-                        {{ article.created_at }}
-                        &nbsp;
-                        <i class="far fa-eye"></i>
-                        {{ article.views }}
-                    </p>
+                    <h5 class="card-title"><a href="{% url 'myblog:Detail' article.id %}">{{ article.title }}</a></h5>
+                    <p class="card-text text-right">閲覧数:{{ article.views }}</p>
+                    <p class="card-text text-right">{{ article.created_at }}</p>
                 </div>
             </div>
 
