@@ -67,6 +67,10 @@ a {
     margin-bottom: 1rem;
 }
 
+.toc:before {
+    content: "目次";
+}
+
 .toc ul {
     list-style: none;
     padding-left: 20px;
