@@ -27,10 +27,12 @@
         </div>
         {{ object.formatted_markdown|safe }}
         <div class="clearfix mb-2">
-            閲覧数:{{ object.views }}
+            <i class="far fa-eye"></i>
+            {{ object.views }}
         </div>
         <div class="article-updated">
-            {{ object.updated_ad }}
+            <i class="far fa-clock"></i>
+            {{ object.created_at }}
         </div>
         <div class="article-index-link">
             <a href="{% url 'myblog:Index' %}">トップページに戻る</a>
