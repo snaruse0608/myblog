@@ -2,46 +2,28 @@
 
 {% block title %}WHITE LEAF{% endblock %}
 
-<!-- body --> 
+<!-- body -->
 {% block contents %}
-    <h4 class="ml-2 mt-2">記事一覧</h4>
-        {% for article in article_list %}
+    <h4 class="ml-2 mt-2">タグ一覧</h4>
+        {% for tag in tag_list %}
 
             <div class="card m-2">
                 <div class="card-body" >
-                    <div class="clearfix">
-                        <div class="float-right">
-                            {% for tag in article.tags.all %}
-                                <a class="tag" href="{% url 'myblog:ArticleByTagIndex' tag.id %}">
-                                    <i class="fas fa-tag"></i>
-                                    {{ tag.name }}
-                                </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <a href="{% url 'myblog:Detail' article.id %}">
+                    <a href="{% url 'myblog:ArticleByTagIndex' tag.id %}">
                         <h5 class="card-title">
-                            <i class="far fa-newspaper"></i>
-                            {{ article.title }}
+                            {{ tag.name }}
                         </h5>
                     </a>
-                    <p class="card-text text-right">
-                        <i class="far fa-clock"></i>
-                        {{ article.created_at }}
-                        &nbsp;
-                        <i class="far fa-eye"></i>
-                        {{ article.views }}
-                    </p>
                 </div>
             </div>
 
         {% empty %}
-            <p>ブログがありません…</p>
+            <p>タグがありません…</p>
         {% endfor %}
 
 {% endblock %}
 
-<!-- サイドバー --> 
+<!-- サイドバー -->
 {% block sidebar %}
     <div>
         運営者<br>
