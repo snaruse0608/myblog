@@ -77,6 +77,13 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
+    introduction = models.TextField(
+        verbose_name='自己紹介文',
+        max_length=1000,
+        blank=True,
+        null=True,
+    )
+
     objects = UserManager()
 
     EMAIL_FIELD = 'email'
