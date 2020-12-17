@@ -1,14 +1,26 @@
 from django.views import generic
+from accounts.models import CustomUser
 from .models import Article
 from .models import Tag
+
 
 class ArticleListView(generic.ListView):
     model = Article
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user_list = CustomUser.objects.order_by('-username')
+
+        context.update({
+            'user_list': user_list,
+        })
+        return context
+
     def get_queryset(self):
         articles = Article.objects.all().order_by('-created_at')
         return articles
+
 
 class ArticleDetailView(generic.DetailView):
     model = Article
@@ -22,6 +34,7 @@ class ArticleDetailView(generic.DetailView):
         article.save()
         return context
 
+
 class TagListView(generic.ListView):
     model = Tag
     template_name = 'tag_index.html'
@@ -30,11 +43,10 @@ class TagListView(generic.ListView):
         tag = Tag.objects.all().order_by('-name')
         return tag
 
+
 class ArticleByTagListView(generic.ListView):
     model = Article
     template_name = 'article_by_tag_index.html'
-
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

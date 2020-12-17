@@ -39,7 +39,6 @@
         </div>
     </article>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -54,13 +53,6 @@
             <img class="rounded-circle" src="../../../static/icon/{{ object.user.username }}_icon.png" />
             <div style="text-align: center">{{ object.user.last_name }}</div>
         </div>
-        {% if object.user.username == 'shiroha' %}
-            情報系の理系大学で主に統計学を学ぶ。<br>
-            卒業後はSI企業に就職しSalesforceの導入支援にて主に開発を担当した。<br>
-            その後転職し、Ruby on Rails、Vue.jsを使用したWebアプリケーションの改修を行なっている。<br>
-        {% elif object.user.username == 'osechitan' %}
-            Salesforceの導入支援にて主に開発を担当した。<br>
-            現在転職活動中...<br>
-        {% endif %}
+        {{ object.user.introduction|linebreaksbr }}
     {% endif %}
 {% endblock %}
