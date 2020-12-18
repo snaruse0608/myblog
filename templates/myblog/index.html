@@ -45,16 +45,16 @@
 {% block sidebar %}
     <div>
         運営者<br />
-        {% for user in user_list %}
-            <div class="user-icon">
-                <img class="rounded-circle" src="../../../static/icon/{{ user.username }}_icon.png" />
-                <div style="text-align: center">{{ user.last_name }}</div>
-            </div>
-            {{ user.introduction|linebreaksbr }}
-            {% if forloop.counter == 1 %}
-                <br />
-                <br />
-            {% endif %}
-        {% endfor %}
+        <div class="user-information">
+            {% for user in user_list %}
+                <div class="user-icon">
+                    <img class="rounded-circle" src="../../../static/icon/{{ user.username }}_icon.png" />
+                    <div style="text-align: center">{{ user.last_name }}</div>
+                </div>
+                <div class="user-introduction">
+                    {{ user.introduction|linebreaksbr }}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

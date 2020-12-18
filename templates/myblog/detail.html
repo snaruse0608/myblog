@@ -53,6 +53,8 @@
             <img class="rounded-circle" src="../../../static/icon/{{ object.user.username }}_icon.png" />
             <div style="text-align: center">{{ object.user.last_name }}</div>
         </div>
-        {{ object.user.introduction|linebreaksbr }}
+        <div class="user-introduction">
+            {{ object.user.introduction|linebreaksbr }}
+        </div>
     {% endif %}
 {% endblock %}
