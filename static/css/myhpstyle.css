@@ -79,33 +79,37 @@ a {
 
 .tag {
     position: relative;
-	display: inline-block;
-	margin: 0 0 0 .8em;
-	padding: .6em .6em .6em 0;
-	line-height: 1;
-	color: #fff !important;
-	text-decoration: none;
+    display: inline-block;
+    margin: 0 0 0 .8em;
+    padding: .6em .6em .6em 0;
+    line-height: 1;
+    color: #fff !important;
+    text-decoration: none;
     background-color: #333333;
     font-size: xx-small;
 }
 
 .tag:before {
-	position: absolute;
-	top: 0;
-	left: -1em;
-	content: '';
-	border-width: 1.1em 1em 1.1em 0;
-	border-style: solid;
-	border-color: transparent #333333 transparent transparent;
+    position: absolute;
+    top: 0;
+    left: -1em;
+    content: '';
+    border-width: 1.1em 1em 1.1em 0;
+    border-style: solid;
+    border-color: transparent #333333 transparent transparent;
 }
 .tag:after {
-	position: absolute;
-	top: center;
-	left: 0;
-	color: #fff;
+    position: absolute;
+    top: center;
+    left: 0;
+    color: #fff;
 }
 
 .user-icon {
     width: 150px;
     margin: auto;
+}
+
+.user-introduction{
+    margin-bottom: 2rem;
 }
